@@ -16,7 +16,7 @@ import java.nio.file.Paths;
 public class Main {
 
     /**
-     * This program converts a 1.12 pack to multiple new versions, as opposed to running the ResourcePackConverter multiple times.
+     * This program converts a 1.15 pack to multiple new versions, as opposed to running the ResourcePackConverter multiple times.
      * @param args inputted arguments
      */
     public static void main(String[] args) throws IOException {
@@ -27,7 +27,7 @@ public class Main {
 
         //Gathers arguments needed for conversion
         System.out.println("Gathering arguments...");
-        String from = "1.12";
+        String from = "1.15";
         String light = "front";
         boolean minify = true;
 
@@ -50,16 +50,6 @@ public class Main {
         Pack pack = updatePack(currentPack);
 
 
-
-        updateVersion("1.12", "1.13", out, getFinishedPath(convertedPack, "null", "1.13", extension), pack, convertedPack);
-        currentPack = getFinishedPath(convertedPack, "null","1.13", extension);
-        pack = updatePack(currentPack);
-        convertedPack = updateConverted(currentPack, extension);
-
-        updateVersion("1.13", "1.15", out, getFinishedPath(convertedPack, "1.13", "1.15", extension), pack, convertedPack);
-        currentPack = getFinishedPath(convertedPack, "1.13","1.15", extension);
-        pack = updatePack(currentPack);
-        convertedPack = updateConverted(currentPack, extension);
 
         updateVersion("1.15", "1.16.2", out, getFinishedPath(convertedPack, "1.15","1.16.2", extension), pack, convertedPack);
         currentPack = getFinishedPath(convertedPack, "1.15","1.16.2", extension);
